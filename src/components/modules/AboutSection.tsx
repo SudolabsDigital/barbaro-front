@@ -3,131 +3,129 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { cn } from "@/src/lib/utils";
-import Link from "next/link";
 
 const STORY_BLOCKS = [
   {
-    tag: "EL LEGADO",
-    title: "Nuestra Autoridad",
-    content: "Más que números, son historias de confianza. Hemos perfeccionado el arte de la barbería clásica a través de miles de rituales que definen nuestra posición como referentes del sector.",
-    metrics: [
-      { label: "Servicios Realizados", value: "+15K" },
-      { label: "Maestros Artesanos", value: "12" },
-      { label: "Años de Tradición", value: "08" },
-    ]
+    tag: "I. LEGADO",
+    title: "Herencia",
+    content: "Rescatamos los rituales de la barbería clásica para una autoridad contemporánea.",
+    metrics: [{ label: "RITUALES", value: "15K" }]
   },
   {
-    tag: "EL CLAN",
-    title: "Artesanos de la Imagen",
-    content: "No somos simples barberos; somos guardianes de una tradición centenaria. Cada miembro de nuestro equipo es un especialista formado en las técnicas más exigentes para garantizar que cada corte sea una obra de autor.",
+    tag: "II. EL CLAN",
+    title: "Maestros",
+    content: "Esculpimos su versión más imponente con precisión de cirujano.",
+    metrics: [{ label: "ARTESANOS", value: "12" }]
   },
   {
-    tag: "EL COMPROMISO",
-    title: "Nuestra Promesa",
-    content: "En Bárbaro, el resultado es innegociable. Nuestra promesa es brindarte no solo un servicio impecable, sino un santuario donde la distinción y la confianza se encuentran en cada detalle del ritual.",
+    tag: "III. SANTUARIO",
+    title: "Refugio",
+    content: "Un santuario donde el tiempo se detiene y la distinción se encuentra con la calma.",
+    metrics: [{ label: "AÑOS", value: "08" }]
   },
 ];
 
 export default function AboutSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   
+  // Hook para el progreso del scroll en esta sección
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
 
+  // Movimiento horizontal para la columna de narrativa
+  const xTranslate = useTransform(scrollYProgress, [0, 1], ["0%", "-66.6%"]);
+
   return (
     <section 
       ref={containerRef} 
       id="nosotros" 
-      className="relative h-[350vh] bg-black"
+      className="relative h-[300vh] bg-background grain-overlay border-t border-primary/5"
     >
-      {/* Sticky Container */}
       <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden">
         
-        {/* Decorative Grid Background */}
-        <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
-             style={{ backgroundImage: 'radial-gradient(circle, #df9336 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
+        {/* Marca de agua de fondo (Aesthetic) */}
+        <div className="absolute inset-0 z-0 opacity-[0.015] pointer-events-none flex items-center justify-center">
+          <span className="text-[40vw] font-display text-white select-none whitespace-nowrap">BÁRBARO</span>
+        </div>
 
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 grid grid-cols-1 md:grid-cols-[0.25fr_0.75fr] gap-12 lg:gap-24 items-center">
+        <div className="container mx-auto px-6 md:px-12 lg:px-20 grid grid-cols-1 lg:grid-cols-[0.4fr_0.6fr] gap-12 items-center relative z-10">
           
-          {/* Left Column: Fixed Minimalist Anchor (25%) */}
-          <div className="relative h-full flex flex-col justify-center border-r border-white/5 pr-12">
+          {/* Ancla narrativa fija (Izquierda) */}
+          <div className="flex flex-col justify-center border-l-2 border-primary/20 pl-8 md:pl-12">
             <motion.div
               style={{
-                opacity: useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]),
+                opacity: useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0.5, 1, 1, 0.5]),
               }}
             >
-              <span className="font-sans text-[10px] uppercase tracking-[0.6em] text-primary/60 mb-6 block">
+              <span className="font-sans text-[9px] uppercase tracking-[0.8em] text-primary/50 mb-6 block">
                 FILOSOFÍA
               </span>
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-display leading-[0.9] text-white uppercase tracking-tighter">
-                EL CÓDIGO <br /> 
-                <span className="text-primary italic font-serif lowercase">bárbaro</span>
+              <h2 className="text-5xl md:text-7xl lg:text-8xl font-display leading-[0.85] text-white uppercase tracking-tighter">
+                EL <br /> 
+                CÓDIGO <br />
+                <span className="text-primary italic font-serif lowercase block mt-2">bárbaro</span>
               </h2>
             </motion.div>
           </div>
 
-          {/* Right Column: High Hierarchy Content (75%) */}
-          <div className="relative h-[500px] flex items-center">
-            {STORY_BLOCKS.map((block, index) => {
-              const start = index / STORY_BLOCKS.length;
-              const end = (index + 1) / STORY_BLOCKS.length;
-              
-              const opacity = useTransform(
-                scrollYProgress,
-                [start, start + 0.1, end - 0.1, end],
-                [0, 1, 1, 0]
-              );
-              
-              const x = useTransform(
-                scrollYProgress,
-                [start, start + 0.1, end - 0.1, end],
-                [50, 0, 0, -50]
-              );
-
-              return (
-                <motion.div
+          {/* Carrusel horizontal de capítulos (Derecha) */}
+          <div className="relative overflow-hidden h-[450px]">
+            <motion.div 
+              style={{ x: xTranslate }}
+              className="flex h-full"
+            >
+              {STORY_BLOCKS.map((block, index) => (
+                <div 
                   key={index}
-                  style={{ opacity, x }}
-                  className="absolute inset-0 flex flex-col justify-center"
+                  className="min-w-full lg:min-w-[100%] flex flex-col justify-center pr-12 lg:pr-24"
                 >
-                  <div className="flex items-center gap-6 mb-8">
-                    <span className="font-sans text-[10px] uppercase tracking-[0.5em] text-primary px-3 py-1 border border-primary/20 bg-primary/5">
+                  <div className="flex items-center gap-4 mb-8">
+                    <span className="font-sans text-[10px] font-bold uppercase tracking-[0.4em] text-primary bg-primary/5 px-4 py-2 border border-primary/10">
                       {block.tag}
                     </span>
-                    <div className="flex-1 h-[1px] bg-white/10" />
+                    <div className="flex-1 h-px bg-gradient-to-r from-primary/30 to-transparent" />
                   </div>
 
-                  <h3 className="text-4xl md:text-6xl lg:text-7xl font-display text-white mb-8 tracking-tight">
+                  <h3 className="text-4xl md:text-6xl font-display text-white mb-8 tracking-tight uppercase leading-none">
                     {block.title}
                   </h3>
                   
-                  <p className="font-serif italic text-2xl md:text-3xl lg:text-4xl text-white/80 leading-snug max-w-4xl mb-12">
+                  <p className="font-serif italic text-xl md:text-3xl text-white/80 leading-snug max-w-xl mb-12 border-l-4 border-primary/20 pl-8">
                     "{block.content}"
                   </p>
 
-                  {/* Dynamic Metrics Visual for the first block */}
+                  {/* Métricas con estilo vintage */}
                   {block.metrics && (
-                    <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/5">
+                    <div className="flex gap-10 pt-10 border-t border-primary/10 w-fit">
                       {block.metrics.map((m, mIdx) => (
-                        <div key={mIdx} className="space-y-2">
-                          <span className="font-display text-4xl md:text-5xl text-primary block">{m.value}</span>
-                          <span className="font-sans text-[9px] uppercase tracking-[0.3em] text-muted-foreground">{m.label}</span>
+                        <div key={mIdx} className="flex flex-col gap-1">
+                          <span className="font-display text-3xl md:text-4xl text-primary">{m.value}</span>
+                          <span className="font-sans text-[8px] uppercase tracking-[0.5em] text-muted-foreground font-bold">{m.label}</span>
                         </div>
                       ))}
                     </div>
                   )}
-                </motion.div>
-              );
-            })}
+                </div>
+              ))}
+            </motion.div>
           </div>
 
         </div>
       </div>
 
-      {/* Decorative Accents */}
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.03] blur-[120px] rounded-full pointer-events-none" />
+      {/* Indicador de progreso horizontal */}
+      <div className="absolute bottom-10 right-20 left-20 h-px bg-white/5 hidden lg:block z-50">
+        <motion.div 
+          style={{ width: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]) }}
+          className="h-full bg-primary/40 shadow-[0_0_10px_rgba(223,147,54,0.3)]"
+        />
+        <div className="absolute -top-6 left-0 text-[7px] uppercase tracking-widest text-primary/40">
+          EVOLUCIÓN DEL CÓDIGO
+        </div>
+      </div>
+
     </section>
   );
 }
