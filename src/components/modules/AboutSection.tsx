@@ -28,12 +28,13 @@ const STORY_BLOCKS = [
 export default function AboutSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   
+  // Hook para el progreso del scroll en esta sección
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
 
-  // Horizontal movement for the right column
+  // Movimiento horizontal para la columna de narrativa
   const xTranslate = useTransform(scrollYProgress, [0, 1], ["0%", "-66.6%"]);
 
   return (
@@ -44,14 +45,14 @@ export default function AboutSection() {
     >
       <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden">
         
-        {/* Massive Background Branding */}
+        {/* Marca de agua de fondo (Aesthetic) */}
         <div className="absolute inset-0 z-0 opacity-[0.015] pointer-events-none flex items-center justify-center">
           <span className="text-[40vw] font-display text-white select-none whitespace-nowrap">BÁRBARO</span>
         </div>
 
         <div className="container mx-auto px-6 md:px-12 lg:px-20 grid grid-cols-1 lg:grid-cols-[0.4fr_0.6fr] gap-12 items-center relative z-10">
           
-          {/* Left: Fixed Narrative Anchor */}
+          {/* Ancla narrativa fija (Izquierda) */}
           <div className="flex flex-col justify-center border-l-2 border-primary/20 pl-8 md:pl-12">
             <motion.div
               style={{
@@ -69,7 +70,7 @@ export default function AboutSection() {
             </motion.div>
           </div>
 
-          {/* Right: Horizontal Sliding chapters */}
+          {/* Carrusel horizontal de capítulos (Derecha) */}
           <div className="relative overflow-hidden h-[450px]">
             <motion.div 
               style={{ x: xTranslate }}
@@ -95,6 +96,7 @@ export default function AboutSection() {
                     "{block.content}"
                   </p>
 
+                  {/* Métricas con estilo vintage */}
                   {block.metrics && (
                     <div className="flex gap-10 pt-10 border-t border-primary/10 w-fit">
                       {block.metrics.map((m, mIdx) => (
@@ -113,7 +115,7 @@ export default function AboutSection() {
         </div>
       </div>
 
-      {/* Narrative Progress Indicator (Horizontal) */}
+      {/* Indicador de progreso horizontal */}
       <div className="absolute bottom-10 right-20 left-20 h-px bg-white/5 hidden lg:block z-50">
         <motion.div 
           style={{ width: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]) }}

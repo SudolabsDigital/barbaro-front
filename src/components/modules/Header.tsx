@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { name: "Inicio", href: "/" },
   { name: "Servicios", href: "/servicios" },
   { name: "Nosotros", href: "/nosotros" },
-  { name: "Contacto", href: "#contacto" },
+  { name: "Contacto", href: "/contacto" },
 ];
 
 export default function Header() {
@@ -22,22 +22,22 @@ export default function Header() {
   
   const { scrollY } = useScroll();
 
-  // Handle Visibility and Scrolled state
+  // Gestión de visibilidad y estado de scroll
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() || 0;
     
-    // Scrolled background state
+    // Estado de fondo con scroll
     setIsScrolled(latest > 50);
 
-    // Show Logo after Hero (approx 100vh)
+    // Mostrar logo tras superar el Hero (aprox 100vh)
     const viewportHeight = typeof window !== "undefined" ? window.innerHeight : 800;
     setShowLogo(latest > viewportHeight - 100);
 
-    // Headroom Logic (Show on scroll up, Hide on scroll down)
+    // Lógica Headroom (Mostrar al subir, ocultar al bajar)
     if (latest > previous && latest > 150) {
-      setIsVisible(false); // Scrolling down
+      setIsVisible(false); // Bajando
     } else {
-      setIsVisible(true); // Scrolling up
+      setIsVisible(true); // Subiendo
     }
   });
 
@@ -58,7 +58,7 @@ export default function Header() {
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         
-        {/* Adaptative Brand Identity */}
+        {/* Identidad de Marca Adaptativa */}
         <Link href="/" className="group relative flex items-center min-w-[200px] h-12 overflow-hidden">
           <AnimatePresence mode="wait">
             {!showLogo ? (
@@ -93,7 +93,7 @@ export default function Header() {
           </AnimatePresence>
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Navegación Desktop */}
         <nav className="hidden md:flex items-center gap-10">
           {NAV_LINKS.map((link) => (
             <Link
@@ -108,15 +108,18 @@ export default function Header() {
             </Link>
           ))}
           
-          <button className="relative px-8 py-3 overflow-hidden group border border-primary/20 text-primary font-sans text-[10px] uppercase tracking-[0.3em] font-bold transition-all duration-500 hover:border-primary">
+          <Link 
+            href="/contacto"
+            className="relative px-8 py-3 overflow-hidden group border border-primary/20 text-primary font-sans text-[10px] uppercase tracking-[0.3em] font-bold transition-all duration-500 hover:border-primary"
+          >
             <span className="relative z-10 group-hover:text-background transition-colors duration-500">
               Reservar
             </span>
             <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
-          </button>
+          </Link>
         </nav>
 
-        {/* Mobile Toggle */}
+        {/* Botón Menú Móvil */}
         <button 
           className="md:hidden text-white p-2 hover:text-primary transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -126,7 +129,7 @@ export default function Header() {
 
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Menú Móvil Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -145,9 +148,13 @@ export default function Header() {
                 {link.name}
               </Link>
             ))}
-            <button className="w-full py-5 bg-primary text-background font-sans text-[10px] uppercase tracking-[0.4em] font-bold active:scale-95 transition-transform">
+            <Link 
+              href="/contacto"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="w-full py-5 bg-primary text-background font-sans text-[10px] uppercase tracking-[0.4em] font-bold active:scale-95 transition-transform text-center"
+            >
               RESERVAR RITUAL
-            </button>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

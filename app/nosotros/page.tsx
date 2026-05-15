@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { cn } from "@/src/lib/utils";
+import ClosingCTA from "@/src/components/modules/ClosingCTA";
 
 export default function AboutPage() {
   return (
@@ -74,22 +73,9 @@ export default function AboutPage() {
       </section>
 
       {/* 4. FOOTER CTA */}
-      <section className="container mx-auto px-6 md:px-12 lg:px-20 mt-40 border-t border-primary/10 pt-24 text-center relative">
-         {/* Background Watermark */}
-         <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-display text-white/[0.02] select-none pointer-events-none uppercase tracking-tighter whitespace-nowrap">
-            SANTUARIO
-         </span>
-         
-         <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-display mb-12 uppercase tracking-tighter text-white">ÚNETE AL <span className="text-primary italic lowercase">círculo</span></h2>
-            <Link 
-              href="/" 
-              className="inline-block px-10 py-5 bg-primary text-primary-foreground font-sans text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-accent transition-all duration-500 hover:-translate-y-1 active:translate-y-0"
-            >
-              RESERVAR EXPERIENCIA
-            </Link>
-         </div>
-      </section>
+      <ClosingCTA 
+        subtitle="Tu legado personal se escribe en cada detalle. Permítenos ser los artesanos de tu mejor versión."
+      />
 
     </main>
   );

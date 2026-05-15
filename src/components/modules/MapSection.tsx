@@ -2,13 +2,12 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { MessageSquare } from "lucide-react";
 
 export default function MapSection() {
   return (
     <section className="relative w-full bg-background py-24 lg:py-32 grain-overlay overflow-hidden border-t border-primary/5">
       
-      {/* Decorative background branding */}
+      {/* Marca de agua de fondo arquitectónica */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 opacity-[0.015] pointer-events-none select-none">
         <span className="text-[25vw] font-display text-white whitespace-nowrap uppercase">LOCALIZACIÓN</span>
       </div>
@@ -17,7 +16,7 @@ export default function MapSection() {
         
         <div className="grid grid-cols-1 lg:grid-cols-[0.4fr_0.6fr] gap-16 lg:gap-24 items-center">
           
-          {/* Info Block - High Hierarchy */}
+          {/* Bloque de información: Alta Jerarquía */}
           <div className="space-y-12">
             <div className="space-y-4">
               <span className="font-sans text-[10px] uppercase tracking-[0.8em] text-primary/60 block">
@@ -32,11 +31,11 @@ export default function MapSection() {
               "Ubicados en el corazón de El Tambo, donde la tradición se encuentra con la precisión urbana."
             </p>
 
-            {/* Elevated Social Hierarchy */}
+            {/* Redes sociales con jerarquía elevada */}
             <div className="space-y-8 pt-6">
                <span className="font-sans text-[10px] uppercase tracking-[0.5em] text-white/30 font-bold block border-b border-white/5 pb-4">SÍGUENOS EN EL CLAN</span>
                <div className="flex flex-wrap gap-10">
-                  {/* Facebook - Larger */}
+                  {/* Facebook - Enfoque Premium */}
                   <Link 
                     href="https://www.facebook.com/share/1DmsBSDKTW/?mibextid=wwXIfr" 
                     target="_blank"
@@ -53,7 +52,7 @@ export default function MapSection() {
                     </div>
                   </Link>
 
-                  {/* TikTok - Larger */}
+                  {/* TikTok - Enfoque Premium */}
                   <Link 
                     href="https://www.tiktok.com/@estilo_barbaro?_r=1&_t=ZS-96MmpWIARs5" 
                     target="_blank"
@@ -83,9 +82,9 @@ export default function MapSection() {
             </div>
           </div>
 
-          {/* Map Embed Container */}
+          {/* Contenedor del Mapa: Street View dinámico */}
           <div className="relative w-full aspect-square lg:aspect-auto lg:h-[700px] border border-primary/10 bg-secondary/10 group overflow-hidden">
-             {/* Decorative Corners */}
+             {/* Esquinas decorativas */}
              <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-primary/40 z-20 pointer-events-none group-hover:top-6 group-hover:left-6 transition-all duration-700" />
              <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-primary/40 z-20 pointer-events-none group-hover:bottom-6 group-hover:right-6 transition-all duration-700" />
              
@@ -100,7 +99,7 @@ export default function MapSection() {
                 className="grayscale-[0.8] contrast-[1.1] brightness-[0.7] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 scale-105 group-hover:scale-100"
              />
 
-             {/* Dynamic Overlay */}
+             {/* Overlay dinámico para mezclar con la estética */}
              <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_150px_rgba(0,0,0,0.8)] z-10 group-hover:shadow-[inset_0_0_150px_rgba(0,0,0,0.4)] transition-all duration-1000" />
           </div>
 

@@ -2,9 +2,8 @@
 
 import { motion } from "framer-motion";
 import { ServiceCategory } from "@/src/domain/service";
-import { cn } from "@/src/lib/utils";
 import Image from "next/image";
-import Link from "next/link";
+import ClosingCTA from "@/src/components/modules/ClosingCTA";
 
 interface ServicesPageProps {
   categories: ServiceCategory[];
@@ -116,15 +115,10 @@ export default function ServicesPageClient({ categories }: ServicesPageProps) {
       </div>
 
       {/* Footer CTA */}
-      <section className="container mx-auto px-6 md:px-12 lg:px-20 mt-40 border-t border-primary/10 pt-24 text-center">
-         <h2 className="text-3xl md:text-5xl lg:text-6xl font-display mb-12 uppercase tracking-tighter text-white">¿LISTO PARA TU <span className="text-primary italic lowercase">ritual</span>?</h2>
-         <Link 
-            href="/" 
-            className="inline-block px-10 py-5 bg-primary text-primary-foreground font-sans text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-accent transition-all duration-500"
-          >
-            VOLVER AL INICIO
-          </Link>
-      </section>
+      <ClosingCTA 
+        title="Tu transformación comienza aquí."
+        subtitle="Cada servicio es un compromiso con tu distinción. Elige tu ritual y asegura tu lugar en el Clan."
+      />
     </main>
   );
 }
