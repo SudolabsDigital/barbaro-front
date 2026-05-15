@@ -1,6 +1,8 @@
 import Hero from "@/src/components/modules/Hero";
 import ServicesSection from "@/src/components/modules/ServicesSection";
 import AboutSection from "@/src/components/modules/AboutSection";
+import MembershipSection from "@/src/components/modules/MembershipSection";
+import MapSection from "@/src/components/modules/MapSection";
 import ContactSection from "@/src/components/modules/ContactSection";
 import { getServicesByCategory } from "@/src/infrastructure/mdx-repository";
 
@@ -12,6 +14,8 @@ export default function Home() {
       <Hero />
       {categories.length > 0 && <ServicesSection categories={categories} />}
       <AboutSection />
+      <MembershipSection />
+      <MapSection />
       <ContactSection />
     </main>
   );
