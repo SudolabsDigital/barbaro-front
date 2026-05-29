@@ -4,6 +4,7 @@ import Header from "@/src/components/modules/Header";
 import FloatingConnect from "@/src/components/modules/FloatingConnect";
 import { BARBARO_INFO } from "@/src/lib/constants";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://barbaro.pe"), // Base URL para resolver rutas de imágenes
@@ -143,6 +144,7 @@ export default function RootLayout({
         {children}
         <FloatingConnect />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
