@@ -32,7 +32,7 @@ export default function MembershipSection() {
 
             <div className="space-y-6">
               <p className="font-serif italic text-xl md:text-2xl text-white/80 leading-snug max-w-xl">
-                "La constancia merece distinción. Únete a nuestro programa de fidelidad y eleva cada visita a un nivel superior."
+                &quot;La constancia merece distinción. Únete a nuestro programa de fidelidad y eleva cada visita a un nivel superior.&quot;
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">

@@ -1,11 +1,35 @@
 import type { Metadata } from "next";
+import Script from "next/script";
+import { Montserrat, Lora, Abril_Fatface } from "next/font/google";
 import "./globals.css";
 import Header from "@/src/components/modules/Header";
 import FloatingConnect from "@/src/components/modules/FloatingConnect";
 import { BARBARO_INFO } from "@/src/lib/constants";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  variable: "--font-lora",
+  display: "swap",
+  style: ["normal", "italic"],
+});
+
+const abril = Abril_Fatface({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-abril",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://barbaro.pe"), // Base URL para resolver rutas de imágenes
+  metadataBase: new URL("https://estilobarbaro.com"), // Base URL para resolver rutas de imágenes
   title: {
     default: BARBARO_INFO.name,
     template: `%s | ${BARBARO_INFO.shortName}`
@@ -21,7 +45,9 @@ export const metadata: Metadata = {
     "Estilo Bárbaro Huancayo",
     "Donde el estilo alcanza la elegancia",
     "Barberos profesionales Huancayo",
-    "Cortes de cabello tendencia 2026 hombre"
+    "Cortes de cabello tendencia 2026 hombre",
+    "Elegancia",
+    "Barbería"
   ],
   authors: [{ name: "Bárbaro Clan" }],
   creator: "Jos",
@@ -34,24 +60,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_PE",
-    url: "https://barbaro.pe",
+    url: "https://estilobarbaro.com",
     siteName: BARBARO_INFO.shortName,
     title: BARBARO_INFO.name,
-    description: BARBARO_INFO.description,
+    description: "Descubre la barbería donde la tradición y la elegancia se encuentran. Cortes de autor y rituales clásicos.",
     images: [
       {
-        url: "/og-image.webp",
+        url: "/logo-hero-new.webp",
         width: 1200,
         height: 630,
-        alt: "Bárbaro - Barbería Premium y Santuario de Estilo",
+        alt: "Bárbaro - Barbería Premium y Santuario de Estilo y Elegancia",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: BARBARO_INFO.name,
-    description: BARBARO_INFO.description,
-    images: ["/og-image.webp"],
+    description: "La barbería donde el estilo alcanza la máxima elegancia. Reserva tu cita.",
+    images: ["/logo-hero-new.webp"],
   },
   robots: {
     index: true,
@@ -76,9 +102,9 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "BarberShop",
     "name": BARBARO_INFO.shortName,
-    "image": "https://barbaro.pe/og-image.webp",
-    "@id": "https://barbaro.pe",
-    "url": "https://barbaro.pe",
+    "image": "https://estilobarbaro.com/logo-hero-new.webp",
+    "@id": "https://estilobarbaro.com",
+    "url": "https://estilobarbaro.com",
     "telephone": BARBARO_INFO.phone,
     "email": BARBARO_INFO.email,
     "slogan": "Donde el estilo alcanza la elegancia",
@@ -137,10 +163,25 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased flex flex-col min-h-screen">
+      <body className={`antialiased flex flex-col min-h-screen ${montserrat.variable} ${lora.variable} ${abril.variable}`}>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-NPQH2R8ETN"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-NPQH2R8ETN');
+          `}
+        </Script>
         <Header />
         {children}
         <FloatingConnect />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
