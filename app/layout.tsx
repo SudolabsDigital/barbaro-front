@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     default: BARBARO_INFO.name,
     template: `%s | ${BARBARO_INFO.shortName}`
   },
-  description: BARBARO_INFO.description,
+  description: "Descubre la barbería premium en Huancayo donde la tradición y la elegancia se encuentran. Cortes de autor, cuidado de barba y rituales clásicos.",
   keywords: [
     "Barbería premium Huancayo", 
     "Mejor barbería en Huancayo", 
@@ -47,7 +47,17 @@ export const metadata: Metadata = {
     "Barberos profesionales Huancayo",
     "Cortes de cabello tendencia 2026 hombre",
     "Elegancia",
-    "Barbería"
+    "Barbería",
+    "Huancayo",
+    "Premium",
+    "Perú",
+    "Junín",
+    "Barbershop Huancayo",
+    "Corte de pelo hombre",
+    "Corte de cabello masculino",
+    "Peluquería para hombres",
+    "Cortes de hombre modernos",
+    "Spa masculino Huancayo"
   ],
   authors: [{ name: "Bárbaro Clan" }],
   creator: "Jos",
@@ -63,7 +73,7 @@ export const metadata: Metadata = {
     url: "https://estilobarbaro.com",
     siteName: BARBARO_INFO.shortName,
     title: BARBARO_INFO.name,
-    description: "Descubre la barbería donde la tradición y la elegancia se encuentran. Cortes de autor y rituales clásicos.",
+    description: "Descubre la barbería premium en Huancayo donde la tradición y la elegancia se encuentran. Cortes de autor y rituales clásicos.",
     images: [
       {
         url: "/logo-hero-new.webp",
