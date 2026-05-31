@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/src/components/modules/Header";
 import FloatingConnect from "@/src/components/modules/FloatingConnect";
@@ -140,6 +141,19 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased flex flex-col min-h-screen">
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-NPQH2R8ETN"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-NPQH2R8ETN');
+          `}
+        </Script>
         <Header />
         {children}
         <FloatingConnect />
