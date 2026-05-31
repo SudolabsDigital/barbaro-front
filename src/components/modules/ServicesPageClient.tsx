@@ -20,7 +20,7 @@ export default function ServicesPageClient({ categories }: ServicesPageProps) {
             animate={{ opacity: 1, y: 0 }}
             className="font-sans text-[10px] uppercase tracking-[0.8em] text-primary/60 mb-6 block"
           >
-            CATÁLOGO DE RITUALES
+            CATÁLOGO DE SERVICIOS PREMIUM
           </motion.span>
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}

@@ -43,6 +43,7 @@ export default function ServicesSection({ categories = [] }: ServicesSectionProp
 
         {/* ROW 1: CATEGORIES - Refined Contrast & Readability */}
         <div className="mb-12 border-b border-primary/10 pb-2 overflow-x-auto no-scrollbar">
+          <span className="sr-only">Servicios Premium</span>
           <div className="flex gap-10 md:gap-14 min-w-max">
             {categories.map((category) => (
               <button

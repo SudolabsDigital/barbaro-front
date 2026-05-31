@@ -8,7 +8,7 @@ const STORY_BLOCKS = [
   {
     tag: "I. LEGADO",
     title: "Herencia",
-    content: "Rescatamos los rituales de la barbería clásica para una autoridad contemporánea.",
+    content: "Rescatamos los rituales de la barbería clásica para ofrecer una experiencia premium en Huancayo.",
     metrics: [{ label: "RITUALES", value: "15K" }]
   },
   {

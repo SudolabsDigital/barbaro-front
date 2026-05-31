@@ -46,7 +46,7 @@ export default function Hero({ className }: HeroProps) {
       {/* Contenido principal: Identidad y Slogan */}
       <div className="relative z-20 h-full w-full container mx-auto flex flex-col items-center justify-center px-6 md:px-12">
         
-        <h1 className="sr-only">Bárbaro - Barbería premium donde el estilo alcanza la máxima elegancia</h1>
+        <h1 className="sr-only">Bárbaro - La barbería premium en Huancayo donde el estilo alcanza la máxima elegancia</h1>
 
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
