@@ -52,7 +52,7 @@ export default function ClosingCTA({
 
           {/* Subline */}
           <p className="font-serif italic text-xl md:text-2xl text-white/70 max-w-2xl mx-auto leading-relaxed">
-            "{subtitle}"
+            &quot;{subtitle}&quot;
           </p>
 
           {/* Actions */}

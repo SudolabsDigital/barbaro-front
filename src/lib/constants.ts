@@ -1,4 +1,4 @@
-// Datos de la Organización para SEO Local y GEO (Optimizado para Autoridad)
+// Datos de la Organización para SEO Local y GEO
 export const BARBARO_INFO = {
   name: "Bárbaro | Barbería Premium en Huancayo - Donde el Estilo alcanza la Elegancia",
   shortName: "Estilo Bárbaro",

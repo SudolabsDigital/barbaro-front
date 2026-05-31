@@ -30,7 +30,7 @@ export default function ContactSection() {
             </div>
             
             <p className="font-serif italic text-lg md:text-xl text-white/60 max-w-lg leading-relaxed border-l border-primary/20 pl-8">
-              "La distinción no es un acto, es un hábito. Reserva tu ritual y permítenos elevar tu estándar."
+              &quot;La distinción no es un acto, es un hábito. Reserva tu ritual y permítenos elevar tu estándar.&quot;
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 pt-8">

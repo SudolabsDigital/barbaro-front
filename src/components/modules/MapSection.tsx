@@ -28,7 +28,7 @@ export default function MapSection() {
             </div>
             
             <p className="font-serif italic text-xl md:text-2xl text-white/70 leading-relaxed border-l-4 border-primary/20 pl-8">
-              "Ubicados en el corazón de El Tambo, donde la tradición se encuentra con la precisión urbana."
+              &quot;Ubicados en el corazón de El Tambo, donde la tradición se encuentra con la precisión urbana.&quot;
             </p>
 
             {/* Redes sociales con jerarquía elevada */}

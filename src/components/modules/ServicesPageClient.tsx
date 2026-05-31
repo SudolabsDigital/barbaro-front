@@ -36,7 +36,7 @@ export default function ServicesPageClient({ categories }: ServicesPageProps) {
             transition={{ delay: 0.2 }}
             className="font-serif italic text-lg md:text-xl text-white/70 max-w-2xl border-l border-primary/20 pl-8"
           >
-            "Explore nuestra selección exhaustiva de servicios diseñados para el caballero contemporáneo que no acepta compromisos en su imagen."
+            &quot;Explore nuestra selección exhaustiva de servicios diseñados para el caballero contemporáneo que no acepta compromisos en su imagen.&quot;
           </motion.p>
         </div>
       </section>

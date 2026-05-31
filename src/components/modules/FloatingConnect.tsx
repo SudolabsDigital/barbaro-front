@@ -158,6 +158,6 @@ export default function FloatingConnect() {
   );
 }
 
-function cn(...inputs: any[]) {
+function cn(...inputs: unknown[]) {
   return inputs.filter(Boolean).join(" ");
 }
