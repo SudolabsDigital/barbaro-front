@@ -93,7 +93,7 @@ export default function AboutSection() {
                   </h3>
                   
                   <p className="font-serif italic text-xl md:text-3xl text-white/80 leading-snug max-w-xl mb-12 border-l-4 border-primary/20 pl-8">
-                    "{block.content}"
+                    &quot;{block.content}&quot;
                   </p>
 
                   {/* Métricas con estilo vintage */}

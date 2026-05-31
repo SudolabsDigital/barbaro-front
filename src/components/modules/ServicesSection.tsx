@@ -30,7 +30,7 @@ export default function ServicesSection({ categories = [] }: ServicesSectionProp
               EL RITUAL <br /> <span className="text-primary italic font-serif text-2xl md:text-4xl lowercase block mt-2">de servicios</span>
             </h2>
             <p className="font-serif italic text-lg text-white/50 max-w-xl">
-              "{activeCategoryInfo?.description}"
+              &quot;{activeCategoryInfo?.description}&quot;
             </p>
           </div>
           <Link 

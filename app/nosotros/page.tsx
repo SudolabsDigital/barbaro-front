@@ -35,7 +35,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto space-y-10">
           <span className="font-sans text-[10px] uppercase tracking-[0.8em] text-primary/60">NUESTROS VALORES</span>
           <p className="font-serif italic text-2xl md:text-4xl lg:text-5xl text-white/90 leading-tight">
-            "Creemos en la elegancia como una forma de respeto, en la tradición como nuestra brújula y en la perfección como nuestra única medida."
+            &quot;Creemos en la elegancia como una forma de respeto, en la tradición como nuestra brújula y en la perfección como nuestra única medida.&quot;
           </p>
           <div className="w-16 h-px bg-primary/30 mx-auto mt-12" />
         </div>

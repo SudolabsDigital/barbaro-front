@@ -183,7 +183,7 @@ export default function ContactPage() {
             <div className="space-y-6">
               <h3 className="text-3xl md:text-4xl font-display text-white uppercase tracking-tighter">EL COMPROMISO BÁRBARO</h3>
               <p className="font-serif italic text-lg md:text-xl text-white/60 leading-relaxed border-l-2 border-primary/20 pl-8">
-                "Al solicitar tu ritual, no solo agendas un corte, reclamas un momento de distinción. Nuestro equipo confirmará tu disponibilidad en minutos."
+                &quot;Al solicitar tu ritual, no solo agendas un corte, reclamas un momento de distinción. Nuestro equipo confirmará tu disponibilidad en minutos.&quot;
               </p>
             </div>
 

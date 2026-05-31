@@ -33,19 +33,21 @@ export default function Hero({ className }: HeroProps) {
 
       {/* Texto de fondo: Tradición */}
       <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none overflow-hidden">
-        <motion.h2 
+        <motion.div 
           initial={{ opacity: 0, letterSpacing: "0.5em" }}
           animate={{ opacity: 0.015, letterSpacing: "0.15em" }}
           transition={{ duration: 2, delay: 0.5 }}
           className="text-[25vw] md:text-[20vw] font-display text-white select-none whitespace-nowrap rotate-90 md:rotate-0 opacity-10 md:opacity-100"
         >
           TRADICIÓN
-        </motion.h2>
+        </motion.div>
       </div>
 
       {/* Contenido principal: Identidad y Slogan */}
       <div className="relative z-20 h-full w-full container mx-auto flex flex-col items-center justify-center px-6 md:px-12">
         
+        <h1 className="sr-only">Bárbaro - Barbería premium donde el estilo alcanza la máxima elegancia</h1>
+
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -70,7 +72,7 @@ export default function Hero({ className }: HeroProps) {
         >
           <div className="w-px h-8 md:h-10 bg-primary/30" />
           <p className="font-serif italic text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary leading-tight max-w-[280px] sm:max-w-md md:max-w-2xl px-4">
-            "Donde el estilo alcanza la elegancia"
+            &quot;Donde el estilo alcanza la elegancia&quot;
           </p>
 
           {/* Botón Reservar Hero */}
