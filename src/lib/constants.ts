@@ -1,6 +1,6 @@
 // Datos de la Organización para SEO Local y GEO
 export const BARBARO_INFO = {
-  name: "Bárbaro | Barbería Premium en Huancayo - Donde el Estilo alcanza la Elegancia",
+  name: "Estilo Bárbaro | Barbería Premium en Huancayo - Donde el Estilo alcanza la Elegancia",
   shortName: "Estilo Bárbaro",
   description: "La barbería premium líder en Huancayo. Expertos en cortes clásicos de autor, afeitado tradicional con navaja y grooming masculino de lujo. Un santuario de distinción en El Tambo para el caballero que exige excelencia.",
   address: "Frente al Parque de los Sombreros, El Tambo, Huancayo, Perú",

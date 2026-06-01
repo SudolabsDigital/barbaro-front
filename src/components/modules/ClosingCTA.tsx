@@ -14,7 +14,7 @@ interface ClosingCTAProps {
 
 export default function ClosingCTA({ 
   title = "La silla está lista. Solo falta tu autoridad.",
-  subtitle = "No es solo un servicio, es tu momento de redefinición. Únete al Clan Bárbaro."
+  subtitle = "No es solo un servicio, es tu momento de redefinición. Únete a Estilo Bárbaro."
 }: ClosingCTAProps) {
   
   return (
@@ -24,7 +24,7 @@ export default function ClosingCTA({
       <div className="absolute inset-0 z-0">
         <Image 
           src="https://picsum.photos/seed/barbaro-chair/1920/1080?grayscale" 
-          alt="Santuario Bárbaro" 
+          alt="Santuario Estilo Bárbaro" 
           fill 
           className="object-cover opacity-20 contrast-125 brightness-50"
         />

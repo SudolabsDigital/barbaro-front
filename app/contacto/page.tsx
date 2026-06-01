@@ -28,7 +28,7 @@ export default function ContactPage() {
     e.preventDefault();
     
     // Construir mensaje de WhatsApp
-    const text = `Hola Bárbaro! 👋%0A%0AMe gustaría reservar un ritual:%0A👤 *Nombre:* ${formData.name}%0A✂️ *Servicio:* ${formData.service}%0A📅 *Fecha:* ${formData.date}%0A⏰ *Hora:* ${formData.time}${formData.message ? `%0A📝 *Nota:* ${formData.message}` : ""}`;
+    const text = `Hola Estilo Bárbaro! 👋%0A%0AMe gustaría reservar un ritual:%0A👤 *Nombre:* ${formData.name}%0A✂️ *Servicio:* ${formData.service}%0A📅 *Fecha:* ${formData.date}%0A⏰ *Hora:* ${formData.time}${formData.message ? `%0A📝 *Nota:* ${formData.message}` : ""}`;
     
     const whatsappNumber = BARBARO_INFO.phone.replace(/\D/g, "");
     window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
@@ -87,7 +87,7 @@ export default function ContactPage() {
                   required
                   type="text" 
                   name="name"
-                  placeholder="Ej. Julian Bárbaro"
+                  placeholder="Ej. Julian"
                   className="w-full bg-background/50 border-b border-primary/20 py-4 px-0 text-white focus:border-primary transition-colors outline-none font-serif italic text-lg"
                   onChange={handleChange}
                 />
