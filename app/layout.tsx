@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Montserrat, Lora, Abril_Fatface } from "next/font/google";
 import "./globals.css";
-import Header from "@/src/components/modules/Header";
-import FloatingConnect from "@/src/components/modules/FloatingConnect";
 import { BARBARO_INFO } from "@/src/lib/constants";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Navbar } from "@/src/components/organisms/Navbar";
+import { Footer } from "@/src/components/organisms/Footer";
+import { FloatingConnect } from "@/src/components/organisms/FloatingConnect";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -87,7 +88,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: BARBARO_INFO.name,
     description: "La barbería donde el estilo alcanza la máxima elegancia. Reserva tu cita.",
-    images: ["/logo-hero.webp"],
+    images: ["/logo-hero-new.webp"],
   },
   robots: {
     index: true,
@@ -112,7 +113,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "BarberShop",
     "name": BARBARO_INFO.shortName,
-    "image": "https://estilobarbaro.com/logo-hero.webp",
+    "image": "https://estilobarbaro.com/logo-hero-new.webp",
     "@id": "https://estilobarbaro.com",
     "url": "https://estilobarbaro.com",
     "telephone": BARBARO_INFO.phone,
@@ -187,8 +188,9 @@ export default function RootLayout({
             gtag('config', 'G-NPQH2R8ETN');
           `}
         </Script>
-        <Header />
+        <Navbar />
         {children}
+        <Footer />
         <FloatingConnect />
         <Analytics />
         <SpeedInsights />

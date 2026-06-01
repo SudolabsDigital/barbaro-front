@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ServiceCategory } from "@/src/domain/service";
 import Image from "next/image";
-import ClosingCTA from "@/src/components/modules/ClosingCTA";
+import { CTASection } from "@/src/components/organisms/CTASection";
 
 interface ServicesPageProps {
   categories: ServiceCategory[];
@@ -115,10 +115,7 @@ export default function ServicesPageClient({ categories }: ServicesPageProps) {
       </div>
 
       {/* Footer CTA */}
-      <ClosingCTA 
-        title="Tu transformación comienza aquí."
-        subtitle="Cada servicio es un compromiso con tu distinción. Elige tu ritual y asegura tu lugar en el Clan."
-      />
+      <CTASection />
     </main>
   );
 }

@@ -1,22 +1,19 @@
-import Hero from "@/src/components/modules/Hero";
-import ServicesSection from "@/src/components/modules/ServicesSection";
-import AboutSection from "@/src/components/modules/AboutSection";
-import MembershipSection from "@/src/components/modules/MembershipSection";
-import MapSection from "@/src/components/modules/MapSection";
-import ContactSection from "@/src/components/modules/ContactSection";
-import { getServicesByCategory } from "@/src/infrastructure/mdx-repository";
+import { Hero } from '@/src/components/organisms/Hero'
+import { ServicesSection } from '@/src/components/organisms/ServicesSection'
+import { PromosSection } from '@/src/components/organisms/PromosSection'
+import { BarbersSection } from '@/src/components/organisms/BarbersSection'
+import { GallerySection } from '@/src/components/organisms/GallerySection'
+import { CTASection } from '@/src/components/organisms/CTASection'
 
-export default function Home() {
-  const categories = getServicesByCategory();
-
+export default function HomePage() {
   return (
-    <main className="flex-1">
+    <main>
       <Hero />
-      {categories.length > 0 && <ServicesSection categories={categories} />}
-      <AboutSection />
-      <MembershipSection />
-      <MapSection />
-      <ContactSection />
+      <ServicesSection />
+      <PromosSection />
+      <BarbersSection />
+      <GallerySection />
+      <CTASection />
     </main>
-  );
+  )
 }

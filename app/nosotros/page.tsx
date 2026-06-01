@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import ClosingCTA from "@/src/components/modules/ClosingCTA";
+import { CTASection } from "@/src/components/organisms/CTASection";
 
 export default function AboutPage() {
   return (
@@ -73,9 +73,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4. FOOTER CTA */}
-      <ClosingCTA 
-        subtitle="Tu legado personal se escribe en cada detalle. Permítenos ser los artesanos de tu mejor versión."
-      />
+      <CTASection />
 
     </main>
   );
