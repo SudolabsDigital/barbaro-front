@@ -7,7 +7,7 @@ import { MapPin, Phone, Mail, Clock, MessageSquare, Share2 } from "lucide-react"
 
 export default function ContactSection() {
   const WHATSAPP_NUMBER = "51960659183"; 
-  const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Bárbaro,%20me%20gustaría%20reservar%20un%20ritual.`;
+  const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Estilo%20Bárbaro,%20me%20gustaría%20reservar%20un%20ritual.`;
 
   return (
     <footer id="contacto" className="relative bg-background pt-32 pb-12 overflow-hidden grain-overlay border-t border-primary/10">
@@ -149,7 +149,7 @@ export default function ContactSection() {
             </div>
             
             <p className="font-sans text-[8px] uppercase tracking-[0.3em] text-white/20 text-center md:text-right font-medium">
-              © 2026 Bárbaro. El estilo que define al hombre. <br className="md:hidden" /> 
+              © 2026 Estilo Bárbaro. El estilo que define al hombre. <br className="md:hidden" /> 
               Desarrollado con rigor por Jos.
             </p>
           </div>

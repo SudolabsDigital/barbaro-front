@@ -84,7 +84,7 @@ export default function Header() {
               >
                 <Image
                   src="/logo-hero-new.webp"
-                  alt="Bárbaro Logo"
+                  alt="Estilo Bárbaro Logo"
                   fill
                   className="object-contain"
                 />

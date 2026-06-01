@@ -13,7 +13,7 @@ export default function AboutPage() {
         <div className="relative w-full aspect-[21/9] overflow-hidden mb-16 border border-primary/10">
           <Image 
             src="https://picsum.photos/seed/barbaro-about/1920/1080?grayscale" 
-            alt="Interior de Bárbaro" 
+            alt="Interior de Estilo Bárbaro" 
             fill 
             className="object-cover contrast-125 brightness-75"
           />
@@ -62,7 +62,7 @@ export default function AboutPage() {
             <div className="w-12 h-px bg-primary/40" />
             <div className="space-y-6">
               <p className="font-serif italic text-lg md:text-xl text-white/70 leading-relaxed max-w-xl">
-                En un mundo que corre, nosotros nos detenemos. Cada servicio en Bárbaro es un recordatorio de que la verdadera excelencia requiere tiempo, atención y una dedicación obsesiva por el detalle.
+                En un mundo que corre, nosotros nos detenemos. Cada servicio en Estilo Bárbaro es un recordatorio de que la verdadera excelencia requiere tiempo, atención y una dedicación obsesiva por el detalle.
               </p>
               <p className="font-sans text-sm uppercase tracking-[0.2em] text-white/50 leading-relaxed max-w-xl">
                 Nuestros barberos no son solo técnicos; son artesanos de la imagen que entienden la responsabilidad de llevar una corona.
