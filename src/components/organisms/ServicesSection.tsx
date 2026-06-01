@@ -1,70 +1,70 @@
 // src/components/organisms/ServicesSection.tsx
 'use client'
 import { SectionHeader } from '@/src/components/molecules/SectionHeader'
-import { ServiceRow } from '@/src/components/molecules/ServiceRow'
-import { ButtonCTA } from '@/src/components/atoms/ButtonCTA'
+import { ServiceCard } from '@/src/components/molecules/ServiceCard'
 import { motion } from 'framer-motion'
 import { fadeUp, staggerContainer } from '@/src/lib/motion'
-
-const SERVICES = [
-  { name: 'Corte Clásico Básico', description: 'Corte tradicional', price: 15 },
-  { name: 'Corte Clásico Moderno', description: 'Solo corte (Con lavado S/ 30)', price: 20 },
-  { name: 'Cortes Fade', description: 'Mid, Low, High, Comprimidos, Texturizados, Ondulaciones (Con lavado S/ 30)', price: 25 },
-  { name: 'Limpieza Facial', description: 'Vapor y toalla caliente', price: 20 },
-  { name: 'Masajes / Lavado capilar', description: 'Con los mejores productos del cuidado capilar', price: 15 },
-  { name: 'Demo Premium', description: 'Limpieza facial + masajes + corte + whisky de cortesía', price: 79.90 },
-  { name: 'Premium Full', description: 'Limpieza con vapor + corte + lavado + masajes + whisky', price: 99.90 },
-]
+import { PREMIUM_PACKAGES, CORE_SERVICES } from '@/src/lib/services'
 
 export function ServicesSection() {
   return (
-    <section
-      id="servicios"
-      className="bg-[var(--color-background)] py-24 lg:py-32"
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+    <section id="servicios" className="bg-[var(--color-background)] py-24 lg:py-32">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-24">
+        
+        {/* Intro */}
+        <motion.div variants={fadeUp} initial="initial" whileInView="animate" viewport={{ once: true }}>
+          <SectionHeader label="Catálogo" title="Nuestros Rituales" align="center" />
+          <p className="font-serif italic text-lg md:text-xl text-[var(--color-foreground)] opacity-75 leading-relaxed text-center mt-6 max-w-2xl mx-auto">
+            Selecciona la experiencia que define tu estilo. Comparte tus favoritos o reserva directamente.
+          </p>
+        </motion.div>
 
-          {/* Columna izquierda */}
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="flex flex-col gap-8 lg:sticky lg:top-24"
-          >
-            <motion.div variants={fadeUp}>
-              <SectionHeader label="Lo que ofrecemos" title="Servicios" />
-            </motion.div>
-            <motion.p variants={fadeUp} className="font-serif italic text-lg text-[var(--color-foreground)] opacity-75 leading-relaxed">
-              Cada servicio es ejecutado con precisión y los mejores productos del mercado.
-            </motion.p>
-            <motion.div variants={fadeUp}>
-              <ButtonCTA variant="primary" size="md" href="/contacto">
-                Reservar ahora
-              </ButtonCTA>
-            </motion.div>
+        {/* TIER 1: Paquetes Premium */}
+        <div className="flex flex-col gap-10">
+          <motion.div variants={fadeUp} initial="initial" whileInView="animate" viewport={{ once: true }}>
+             <h3 className="font-sans text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-primary)] border-b border-[var(--color-border)] pb-4">
+               Experiencias Premium
+             </h3>
           </motion.div>
 
-          {/* Columna derecha — lista */}
           <motion.div
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
-            {SERVICES.map((service, i) => (
-              <motion.div key={service.name} variants={fadeUp}>
-                <ServiceRow
-                  name={service.name}
-                  description={service.description}
-                  price={service.price}
-                  isLast={i === SERVICES.length - 1}
-                />
+            {PREMIUM_PACKAGES.map((pkg) => (
+              <motion.div key={pkg.id} variants={fadeUp}>
+                <ServiceCard {...pkg} />
               </motion.div>
             ))}
           </motion.div>
         </div>
+
+        {/* TIER 2: Core Services */}
+        <div className="flex flex-col gap-10">
+          <motion.div variants={fadeUp} initial="initial" whileInView="animate" viewport={{ once: true }}>
+             <h3 className="font-sans text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-primary)] border-b border-[var(--color-border)] pb-4">
+               Rituales Individuales
+             </h3>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {CORE_SERVICES.map((service) => (
+              <motion.div key={service.id} variants={fadeUp}>
+                <ServiceCard {...service} />
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
       </div>
     </section>
   )
