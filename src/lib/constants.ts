@@ -1,3 +1,5 @@
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+
 // Datos de la Organización para SEO Local y GEO
 export const BARBARO_INFO = {
   name: "Estilo Bárbaro | Barbería Premium en Huancayo - Donde el Estilo alcanza la Elegancia",
