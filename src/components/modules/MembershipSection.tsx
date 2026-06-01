@@ -71,7 +71,7 @@ export default function MembershipSection() {
                 <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden shadow-2xl border border-primary/10 bg-secondary/20">
                   <Image 
                     src="/membership-front.webp" 
-                    alt="Membresía Bárbaro Portada" 
+                    alt="Membresía Estilo Bárbaro Portada" 
                     fill 
                     className="object-cover contrast-110"
                   />

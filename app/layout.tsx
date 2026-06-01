@@ -59,9 +59,9 @@ export const metadata: Metadata = {
     "Cortes de hombre modernos",
     "Spa masculino Huancayo"
   ],
-  authors: [{ name: "Bárbaro Clan" }],
+  authors: [{ name: "Estilo Bárbaro" }],
   creator: "Jos",
-  publisher: "Bárbaro",
+  publisher: "Estilo Bárbaro",
   formatDetection: {
     email: false,
     address: false,
@@ -76,10 +76,10 @@ export const metadata: Metadata = {
     description: "Descubre la barbería premium en Huancayo donde la tradición y la elegancia se encuentran. Cortes de autor y rituales clásicos.",
     images: [
       {
-        url: "/logo-hero-new.webp",
+        url: "/logo-hero.webp",
         width: 1200,
         height: 630,
-        alt: "Bárbaro - Barbería Premium y Santuario de Estilo y Elegancia",
+        alt: "Estilo Bárbaro - Barbería Premium y Santuario de Estilo y Elegancia",
       },
     ],
   },
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: BARBARO_INFO.name,
     description: "La barbería donde el estilo alcanza la máxima elegancia. Reserva tu cita.",
-    images: ["/logo-hero-new.webp"],
+    images: ["/logo-hero.webp"],
   },
   robots: {
     index: true,
@@ -112,7 +112,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "BarberShop",
     "name": BARBARO_INFO.shortName,
-    "image": "https://estilobarbaro.com/logo-hero-new.webp",
+    "image": "https://estilobarbaro.com/logo-hero.webp",
     "@id": "https://estilobarbaro.com",
     "url": "https://estilobarbaro.com",
     "telephone": BARBARO_INFO.phone,
