@@ -42,6 +42,7 @@ export function SdlFooter({
     <footer
       className={`sdl-footer${oscuro ? "" : " sdl-light"}`}
       data-dark={oscuro ? "true" : "false"}
+      style={{ margin: 0 }}
     >
       <div className="sdl-footer__inner">
 

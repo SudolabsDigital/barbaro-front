@@ -60,6 +60,8 @@
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
+  display: block;
+  margin: 0 !important;
 
   padding: 14px 32px;
   min-height: 56px;
