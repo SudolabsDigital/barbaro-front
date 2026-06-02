@@ -15,9 +15,9 @@ export function BarbersSection() {
   return (
     <section
       id="barberos"
-      className="bg-[var(--color-secondary)] py-24 lg:py-32"
+      className="bg-[var(--color-secondary)] py-12 lg:py-16"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-14">
+      <div className="max-w-6xl mx-auto px-4 lg:px-6 flex flex-col gap-8">
         <motion.div variants={fadeUp} initial="initial" whileInView="animate" viewport={{ once: true }}>
           <SectionHeader label="El equipo" title="Nuestros Barberos" />
         </motion.div>

@@ -9,18 +9,18 @@ export function CTASection() {
   const whatsappNumber = BARBARO_INFO.phone.replace(/\D/g, "");
 
   return (
-    <GrainOverlay className="relative py-32 lg:py-40">
+    <GrainOverlay className="relative py-16 lg:py-20">
       <Image src="https://picsum.photos/seed/cta-barbaro/1920/1080?grayscale" alt="Estilo Bárbaro interior" fill className="object-cover object-center" aria-hidden="true" />
       {/* Patrón P01 heredado del Hero */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/30" aria-hidden="true" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 lg:px-6">
         <div className="max-w-xl flex flex-col gap-6">
           {/* Patrón P02 + P03 heredados del Hero */}
           <span className="font-sans text-xs uppercase tracking-[0.2em] text-[var(--color-primary)]">
             Reserva tu lugar
           </span>
-          <h2 className="font-display uppercase tracking-tighter leading-none text-5xl lg:text-7xl text-white">
+          <h2 className="font-display uppercase tracking-tighter leading-none text-4xl lg:text-6xl text-white">
             Tu próxima cita te espera
           </h2>
           {/* Patrón P04 heredado */}

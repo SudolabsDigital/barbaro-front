@@ -12,7 +12,7 @@ export function Footer() {
 
   return (
     <>
-      <footer className="bg-[var(--color-background)] border-t border-[var(--color-primary)] pt-16 pb-0">
+      <footer className="bg-[var(--color-background)] border-t border-[var(--color-primary)] pt-16 pb-12 mb-0">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-16">
           
           {/* Top Grid */}

@@ -1,26 +1,22 @@
 'use client';
 
 import { BARBARO_INFO } from "@/src/lib/constants";
-import { GoldLine } from "@/src/components/atoms/GoldLine";
+import { SectionHeader } from "@/src/components/molecules/SectionHeader";
 import { MapPin, Phone, MessageSquare } from "lucide-react";
 
 export function ContactSection() {
   const whatsappNumber = BARBARO_INFO.phone.replace(/\D/g, "");
   
   return (
-    <section id="contacto" className="relative py-24 lg:py-32 bg-background overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-10">
+    <section id="contacto" className="relative py-12 lg:py-16 bg-background overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 lg:px-6">
         
-        {/* Header de Sección */}
-        <div className="mb-16 lg:mb-24">
-          <span className="font-sans text-[10px] uppercase tracking-[0.8em] text-primary/60 mb-4 block">UBICACIÓN & CONTACTO</span>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-display text-white uppercase tracking-tighter leading-none mb-6">
-            VISÍTANOS EN <br /> <span className="text-primary italic font-serif lowercase">el santuario</span>
-          </h2>
-          <GoldLine width="lg" />
+        {/* Header de Sección Unificado */}
+        <div className="mb-12 lg:mb-16">
+          <SectionHeader label="UBICACIÓN & CONTACTO" title="VISÍTANOS EN" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Columna Izquierda: Información y Redes */}
           <div className="lg:col-span-5 space-y-12">
@@ -29,7 +25,7 @@ export function ContactSection() {
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-primary">
                 <MapPin size={20} />
-                <span className="font-sans text-xs font-bold uppercase tracking-widest">DIRECCIÓN</span>
+                <span className="font-sans text-xs font-medium uppercase tracking-widest">DIRECCIÓN</span>
               </div>
               <p className="font-serif italic text-xl md:text-2xl text-white/90 leading-tight">
                 {BARBARO_INFO.address}
@@ -44,7 +40,7 @@ export function ContactSection() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3 text-primary">
                   <Phone size={18} />
-                  <span className="font-sans text-[10px] font-bold uppercase tracking-widest">TELÉFONO</span>
+                  <span className="font-sans text-[10px] font-medium uppercase tracking-widest">TELÉFONO</span>
                 </div>
                 <a href={`tel:${whatsappNumber}`} className="block font-sans text-lg text-white/80 hover:text-primary transition-colors">
                   {BARBARO_INFO.phone}
@@ -53,7 +49,7 @@ export function ContactSection() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3 text-primary">
                   <MessageSquare size={18} />
-                  <span className="font-sans text-[10px] font-bold uppercase tracking-widest">WHATSAPP</span>
+                  <span className="font-sans text-[10px] font-medium uppercase tracking-widest">WHATSAPP</span>
                 </div>
                 <a 
                   href={`https://wa.me/${whatsappNumber}?text=Hola%20Estilo%20Bárbaro,%20me%20gustaría%20reservar%20un%20ritual.`} 
@@ -68,7 +64,7 @@ export function ContactSection() {
 
             {/* Redes Sociales */}
             <div className="pt-8 border-t border-white/5">
-              <span className="font-sans text-[10px] font-bold uppercase tracking-[0.4em] text-white/30 block mb-6">NUESTRO CLAN DIGITAL</span>
+              <span className="font-sans text-[10px] font-medium uppercase tracking-[0.4em] text-white/30 block mb-6">NUESTRO CLAN DIGITAL</span>
               <div className="flex gap-6">
                 <a 
                   href={BARBARO_INFO.social.facebook} 

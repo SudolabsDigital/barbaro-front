@@ -6,11 +6,11 @@ import { CTASection } from "@/src/components/organisms/CTASection";
 
 export default function AboutPage() {
   return (
-    <main className="bg-background min-h-screen pt-32 pb-24 overflow-hidden grain-overlay flex-1">
+    <main className="bg-background min-h-screen pt-20 pb-12 overflow-hidden grain-overlay flex-1">
       
       {/* 1. HERO EDITORIAL */}
-      <section className="container mx-auto px-6 md:px-12 lg:px-20 mb-32">
-        <div className="relative w-full aspect-[21/9] overflow-hidden mb-16 border border-primary/10">
+      <section className="max-w-6xl mx-auto px-4 lg:px-6 mb-16">
+        <div className="relative w-full aspect-[21/9] overflow-hidden mb-8 border border-primary/10">
           <Image 
             src="https://picsum.photos/seed/barbaro-about/1920/1080?grayscale" 
             alt="Interior de Estilo Bárbaro" 
@@ -22,7 +22,7 @@ export default function AboutPage() {
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-display text-white leading-none uppercase tracking-tighter"
+              className="text-4xl md:text-6xl lg:text-7xl font-display text-white leading-none uppercase tracking-tighter"
             >
               EL CÓDIGO <br /> <span className="text-primary italic font-serif lowercase">bárbaro</span>
             </motion.h1>
@@ -31,19 +31,19 @@ export default function AboutPage() {
       </section>
 
       {/* 2. MANIFIESTO (TIPOGRAFÍA) */}
-      <section className="container mx-auto px-6 md:px-12 lg:px-20 mb-40 text-center">
-        <div className="max-w-4xl mx-auto space-y-10">
+      <section className="max-w-6xl mx-auto px-4 lg:px-6 mb-20 text-center">
+        <div className="max-w-4xl mx-auto space-y-8">
           <span className="font-sans text-[10px] uppercase tracking-[0.8em] text-primary/60">NUESTROS VALORES</span>
-          <p className="font-serif italic text-2xl md:text-4xl lg:text-5xl text-white/90 leading-tight">
+          <p className="font-serif italic text-xl md:text-3xl lg:text-4xl text-white/90 leading-tight">
             &quot;Creemos en la elegancia como una forma de respeto, en la tradición como nuestra brújula y en la perfección como nuestra única medida.&quot;
           </p>
-          <div className="w-16 h-px bg-primary/30 mx-auto mt-12" />
+          <div className="w-16 h-px bg-primary/30 mx-auto mt-8" />
         </div>
       </section>
 
       {/* 3. FILOSOFÍA (Doble Columna) */}
-      <section className="container mx-auto px-6 md:px-12 lg:px-20 mb-40">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <section className="max-w-6xl mx-auto px-4 lg:px-6 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative aspect-square border border-primary/10 p-4 bg-secondary/5">
             <div className="relative w-full h-full overflow-hidden">
               <Image 
@@ -57,14 +57,14 @@ export default function AboutPage() {
             <div className="absolute -bottom-6 -right-6 w-32 h-32 border-r border-b border-primary/30 pointer-events-none" />
           </div>
           
-          <div className="space-y-8">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-display text-white uppercase tracking-tighter leading-none">EL ARTE DE LA <br /> PACIENCIA</h2>
+          <div className="space-y-6">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-display text-white uppercase tracking-tighter leading-none">EL ARTE DE LA <br /> PACIENCIA</h2>
             <div className="w-12 h-px bg-primary/40" />
-            <div className="space-y-6">
-              <p className="font-serif italic text-lg md:text-xl text-white/70 leading-relaxed max-w-xl">
+            <div className="space-y-4">
+              <p className="font-serif italic text-base md:text-lg text-white/70 leading-relaxed max-w-xl">
                 En un mundo que corre, nosotros nos detenemos. Cada servicio en Estilo Bárbaro es un recordatorio de que la verdadera excelencia requiere tiempo, atención y una dedicación obsesiva por el detalle.
               </p>
-              <p className="font-sans text-sm uppercase tracking-[0.2em] text-white/50 leading-relaxed max-w-xl">
+              <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-white/50 leading-relaxed max-w-xl">
                 Nuestros barberos no son solo técnicos; son artesanos de la imagen que entienden la responsabilidad de llevar una corona.
               </p>
             </div>
