@@ -14,8 +14,8 @@ export function PromosSection() {
   const linkColegios = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hola Estilo Bárbaro, quiero aprovechar la promo escolar 3x2 (50% OFF en el tercero).')}`
 
   return (
-    <GrainOverlay className="bg-[var(--color-secondary)] py-24 lg:py-32 border-t border-[var(--color-primary)]/10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-16">
+    <GrainOverlay className="bg-[var(--color-secondary)] py-12 lg:py-16 border-t border-[var(--color-primary)]/10">
+      <div className="max-w-6xl mx-auto px-4 lg:px-6 flex flex-col gap-8">
         <motion.div variants={fadeUp} initial="initial" whileInView="animate" viewport={{ once: true }}>
           <SectionHeader label="Beneficios Exclusivos" title="Membresía & Promos" align="center" />
         </motion.div>

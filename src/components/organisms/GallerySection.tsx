@@ -25,8 +25,8 @@ export function GallerySection() {
   const filtered = active === 'Todos' ? CUTS : CUTS.filter((c) => c.category === active)
 
   return (
-    <section id="galeria" className="bg-[var(--color-background)] py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-10">
+    <section id="galeria" className="bg-[var(--color-background)] py-12 lg:py-16">
+      <div className="max-w-6xl mx-auto px-4 lg:px-6 flex flex-col gap-6">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
           <SectionHeader label="Nuestro trabajo" title="Galería de Cortes" />
           <div className="flex flex-wrap gap-2">
@@ -43,7 +43,7 @@ export function GallerySection() {
           variants={staggerContainer}
           initial="initial"
           animate="animate"
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-1.5"
         >
           {filtered.map((cut) => (
             <motion.div key={cut.name} variants={fadeUp}>

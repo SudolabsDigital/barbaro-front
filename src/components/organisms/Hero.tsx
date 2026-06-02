@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export function Hero() {
   return (
-    <GrainOverlay className="relative min-h-screen flex items-center">
+    <GrainOverlay className="relative min-h-[85vh] flex items-center">
       {/* Imagen de fondo */}
       <Image
         src="/hero-barbaro.webp"
@@ -24,7 +24,7 @@ export function Hero() {
       />
 
       {/* Contenido */}
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-10 pt-24 pb-16">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 lg:px-6 pt-20 pb-10">
         <div className="max-w-5xl flex flex-col gap-6 md:gap-8">
 
           {/* Label superior — PATRÓN HEREDABLE P02 */}

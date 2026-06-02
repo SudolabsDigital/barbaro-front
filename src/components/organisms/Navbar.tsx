@@ -8,6 +8,7 @@ import Link from 'next/link'
 
 const NAV_LINKS = [
   { href: '/servicios', label: 'Servicios' },
+  { href: '/socios', label: 'Socios' },
   { href: '/nosotros', label: 'Nosotros' },
   { href: '/contacto', label: 'Contacto' },
 ]
@@ -52,7 +53,7 @@ export function Navbar() {
       `}
     >
       <nav
-        className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between"
+        className="max-w-6xl mx-auto px-4 lg:px-6 h-16 flex items-center justify-between"
         aria-label="Navegación principal"
       >
         {/* Logo & Slogan */}

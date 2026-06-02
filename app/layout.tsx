@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Montserrat, Lora, Abril_Fatface } from "next/font/google";
 import "./globals.css";
+import "./sdl-footer.css";
 import { BARBARO_INFO, SITE_URL } from "@/src/lib/constants";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -188,6 +189,7 @@ export default function RootLayout({
             gtag('config', 'G-NPQH2R8ETN');
           `}
         </Script>
+        <Script src="/sdl-footer.js" strategy="afterInteractive" />
         <Navbar />
         {children}
         <Footer />

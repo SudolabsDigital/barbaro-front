@@ -8,8 +8,8 @@ import { PREMIUM_PACKAGES, CORE_SERVICES } from '@/src/lib/services'
 
 export function ServicesSection() {
   return (
-    <section id="servicios" className="bg-[var(--color-background)] py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-24">
+    <section id="servicios" className="bg-[var(--color-background)] py-12 lg:py-16">
+      <div className="max-w-6xl mx-auto px-4 lg:px-6 flex flex-col gap-12">
         
         {/* Intro */}
         <motion.div variants={fadeUp} initial="initial" whileInView="animate" viewport={{ once: true }}>
@@ -20,7 +20,7 @@ export function ServicesSection() {
         </motion.div>
 
         {/* TIER 1: Paquetes Premium */}
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-6">
           <motion.div variants={fadeUp} initial="initial" whileInView="animate" viewport={{ once: true }}>
              <h3 className="font-sans text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-primary)] border-b border-[var(--color-border)] pb-4">
                Experiencias Premium
@@ -43,7 +43,7 @@ export function ServicesSection() {
         </div>
 
         {/* TIER 2: Core Services */}
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-6">
           <motion.div variants={fadeUp} initial="initial" whileInView="animate" viewport={{ once: true }}>
              <h3 className="font-sans text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-primary)] border-b border-[var(--color-border)] pb-4">
                Rituales Individuales
