@@ -2,10 +2,14 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { Service, ServiceCategory } from '@/src/domain/service';
+import { Partner } from '@/src/domain/partner';
 
 const SERVICES_PATH = path.join(process.cwd(), 'src/content/services');
+const PARTNERS_PATH = path.join(process.cwd(), 'src/content/partners');
 
 export const getServicesByCategory = (): ServiceCategory[] => {
+  if (!fs.existsSync(SERVICES_PATH)) return [];
+  
   const fileNames = fs.readdirSync(SERVICES_PATH);
   const allServices: Service[] = fileNames
     .filter((fileName) => fileName.endsWith('.mdx'))
@@ -67,4 +71,33 @@ export const getServicesByCategory = (): ServiceCategory[] => {
     description: categoryDefinitions[catId]?.description || '',
     services: categoriesMap[catId].sort((a, b) => a.order - b.order)
   }));
+};
+
+export const getPartners = (): Partner[] => {
+  if (!fs.existsSync(PARTNERS_PATH)) return [];
+
+  const fileNames = fs.readdirSync(PARTNERS_PATH);
+  const partners: Partner[] = fileNames
+    .filter((fileName) => fileName.endsWith('.mdx'))
+    .map((fileName) => {
+      const slug = fileName.replace(/\.mdx$/, '');
+      const fullPath = path.join(PARTNERS_PATH, fileName);
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const { data, content } = matter(fileContents);
+
+      return {
+        slug,
+        name: data.name,
+        logo: data.logo,
+        tier: data.tier,
+        url: data.url,
+        description: data.description,
+        benefit: data.benefit,
+        brandColor: data.brandColor,
+        order: data.order || 0,
+        content,
+      } as Partner;
+    });
+
+  return partners.sort((a, b) => a.order - b.order);
 };
