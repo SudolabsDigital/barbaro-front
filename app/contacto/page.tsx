@@ -39,15 +39,15 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="bg-background min-h-screen pt-32 pb-24 grain-overlay overflow-hidden">
+    <main className="bg-background min-h-screen pt-20 pb-12 overflow-hidden flex-1">
       
       {/* 1. Header Editorial */}
-      <section className="container mx-auto px-6 md:px-12 lg:px-20 mb-20 text-center lg:text-left">
+      <section className="max-w-6xl mx-auto px-4 lg:px-6 mb-10 text-center lg:text-left">
         <div className="max-w-4xl">
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-sans text-[10px] uppercase tracking-[0.8em] text-primary/60 mb-6 block"
+            className="font-sans text-[10px] uppercase tracking-[0.8em] text-primary/60 mb-4 block"
           >
             RESERVAS ELITE
           </motion.span>
@@ -55,7 +55,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-display leading-[0.85] mb-12 uppercase tracking-tighter text-white"
+            className="text-4xl md:text-6xl lg:text-7xl font-display leading-[0.85] mb-8 uppercase tracking-tighter text-white"
           >
             ASEGURA TU <br /> <span className="text-primary italic font-serif text-3xl md:text-5xl lg:text-6xl lowercase">lugar en el clan</span>
           </motion.h1>
@@ -63,21 +63,21 @@ export default function ContactPage() {
       </section>
 
       {/* 2. Formulario & Info Grid */}
-      <section className="container mx-auto px-6 md:px-12 lg:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
+      <section className="max-w-6xl mx-auto px-4 lg:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           
           {/* Columna Izquierda: Formulario Premium */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-secondary/10 border border-primary/10 p-8 md:p-12 rounded-2xl relative"
+            className="bg-secondary/10 border border-primary/10 p-6 md:p-10 rounded-2xl relative"
           >
             {/* Esquinas decorativas */}
             <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-primary/30 rounded-tl-2xl" />
             <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-primary/30 rounded-br-2xl" />
 
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={handleSubmit} className="space-y-6">
               {/* Input: Nombre */}
               <div className="space-y-2">
                 <label className="flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-primary font-bold">
@@ -88,7 +88,7 @@ export default function ContactPage() {
                   type="text" 
                   name="name"
                   placeholder="Ej. Julian"
-                  className="w-full bg-background/50 border-b border-primary/20 py-4 px-0 text-white focus:border-primary transition-colors outline-none font-serif italic text-lg"
+                  className="w-full bg-background/50 border-b border-primary/20 py-3 px-0 text-white focus:border-primary transition-colors outline-none font-serif italic text-base"
                   onChange={handleChange}
                 />
               </div>
@@ -101,7 +101,7 @@ export default function ContactPage() {
                 <div className="relative group">
                   <select 
                     name="service"
-                    className="w-full bg-background/50 border-b border-primary/20 py-4 px-0 text-white focus:border-primary transition-colors outline-none font-serif italic text-lg appearance-none cursor-pointer"
+                    className="w-full bg-background/50 border-b border-primary/20 py-3 px-0 text-white focus:border-primary transition-colors outline-none font-serif italic text-base appearance-none cursor-pointer"
                     onChange={handleChange}
                     value={formData.service}
                   >
@@ -117,7 +117,7 @@ export default function ContactPage() {
               </div>
 
               {/* Grid: Fecha y Hora */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-primary font-bold">
                     <Calendar size={14} /> Fecha
@@ -127,7 +127,7 @@ export default function ContactPage() {
                     type="date" 
                     name="date"
                     min={today}
-                    className="w-full bg-background/50 border-b border-primary/20 py-4 px-0 text-white focus:border-primary transition-colors outline-none font-sans text-sm cursor-pointer invert-[0.8] brightness-200"
+                    className="w-full bg-background/50 border-b border-primary/20 py-3 px-0 text-white focus:border-primary transition-colors outline-none font-sans text-xs cursor-pointer invert-[0.8] brightness-200"
                     onChange={handleChange}
                   />
                 </div>
@@ -138,7 +138,7 @@ export default function ContactPage() {
                   <select 
                     required
                     name="time"
-                    className="w-full bg-background/50 border-b border-primary/20 py-4 px-0 text-white focus:border-primary transition-colors outline-none font-sans text-sm cursor-pointer appearance-none"
+                    className="w-full bg-background/50 border-b border-primary/20 py-3 px-0 text-white focus:border-primary transition-colors outline-none font-sans text-xs cursor-pointer appearance-none"
                     onChange={handleChange}
                     value={formData.time}
                   >
@@ -156,22 +156,22 @@ export default function ContactPage() {
                 </label>
                 <textarea 
                   name="message"
-                  rows={3}
+                  rows={2}
                   placeholder="Algún detalle que debamos saber..."
-                  className="w-full bg-background/50 border-b border-primary/20 py-4 px-0 text-white focus:border-primary transition-colors outline-none font-serif italic text-lg resize-none"
+                  className="w-full bg-background/50 border-b border-primary/20 py-3 px-0 text-white focus:border-primary transition-colors outline-none font-serif italic text-base resize-none"
                   onChange={handleChange}
                 />
               </div>
 
-              <div className="pt-4">
+              <div className="pt-2">
                 <button 
                   type="submit"
-                  className="w-full group relative py-6 bg-primary text-primary-foreground font-sans font-bold uppercase tracking-[0.4em] text-[11px] transition-all hover:bg-white hover:text-black hover:tracking-[0.5em] active:scale-95 shadow-2xl flex items-center justify-center gap-4"
+                  className="w-full group relative py-5 bg-primary text-primary-foreground font-sans font-bold uppercase tracking-[0.4em] text-[10px] transition-all hover:bg-white hover:text-black hover:tracking-[0.5em] active:scale-95 shadow-2xl flex items-center justify-center gap-4"
                 >
-                  <MessageSquare size={18} />
+                  <MessageSquare size={16} />
                   SOLICITAR RITUAL POR WHATSAPP
                 </button>
-                <p className="flex items-center justify-center gap-2 mt-4 text-[8px] uppercase tracking-widest text-white/30 text-center">
+                <p className="flex items-center justify-center gap-2 mt-3 text-[8px] uppercase tracking-widest text-white/30 text-center">
                   <Info size={10} /> La confirmación se enviará a tu WhatsApp
                 </p>
               </div>
@@ -179,25 +179,25 @@ export default function ContactPage() {
           </motion.div>
 
           {/* Columna Derecha: Editorial Info */}
-          <div className="flex flex-col justify-center space-y-16">
-            <div className="space-y-6">
-              <h3 className="text-3xl md:text-4xl font-display text-white uppercase tracking-tighter">EL COMPROMISO BÁRBARO</h3>
-              <p className="font-serif italic text-lg md:text-xl text-white/60 leading-relaxed border-l-2 border-primary/20 pl-8">
+          <div className="flex flex-col justify-center space-y-12">
+            <div className="space-y-4">
+              <h3 className="text-2xl md:text-3xl font-display text-white uppercase tracking-tighter">EL COMPROMISO BÁRBARO</h3>
+              <p className="font-serif italic text-base md:text-lg text-white/60 leading-relaxed border-l-2 border-primary/20 pl-6">
                 &quot;Al solicitar tu ritual, no solo agendas un corte, reclamas un momento de distinción. Nuestro equipo confirmará tu disponibilidad en minutos.&quot;
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-white/5 pt-12">
-               <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-white/5 pt-10">
+               <div className="space-y-3">
                   <span className="font-sans text-[10px] uppercase tracking-widest text-primary/60 font-bold block">Huancayo</span>
-                  <p className="font-sans text-xs text-white/50 leading-relaxed uppercase">
-                    Frente al Parque de los Sombreros<br />
-                    El Tambo
+                  <p className="font-sans text-[10px] text-white/50 leading-relaxed uppercase">
+                    Psj. 03 de octubre, El Tambo<br />
+                    Frente al Parque de los Sombreros
                   </p>
                </div>
-               <div className="space-y-4">
+               <div className="space-y-3">
                   <span className="font-sans text-[10px] uppercase tracking-widest text-primary/60 font-bold block">Contacto</span>
-                  <p className="font-sans text-xs text-white/50 leading-relaxed uppercase">
+                  <p className="font-sans text-[10px] text-white/50 leading-relaxed uppercase">
                     {BARBARO_INFO.phone}<br />
                     {BARBARO_INFO.email}
                   </p>
@@ -205,7 +205,7 @@ export default function ContactPage() {
             </div>
 
             {/* Aesthetic Visual */}
-            <div className="relative aspect-[16/6] overflow-hidden grayscale opacity-30 border border-white/5">
+            <div className="relative aspect-[16/5] overflow-hidden grayscale opacity-30 border border-white/5">
               <Image 
                 src="https://picsum.photos/seed/barbaro-tools/800/300?grayscale" 
                 alt="Herramientas Bárbaro" 

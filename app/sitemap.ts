@@ -1,8 +1,8 @@
 import type { MetadataRoute } from 'next'
-import { getServicesByCategory } from '@/src/infrastructure/mdx-repository'
+import { SITE_URL } from '@/src/lib/constants'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://estilobarbaro.com'
+  const baseUrl = SITE_URL
 
   // Rutas estáticas principales
   const staticRoutes: MetadataRoute.Sitemap = [

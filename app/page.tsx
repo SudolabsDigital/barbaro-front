@@ -1,22 +1,26 @@
-import Hero from "@/src/components/modules/Hero";
-import ServicesSection from "@/src/components/modules/ServicesSection";
-import AboutSection from "@/src/components/modules/AboutSection";
-import MembershipSection from "@/src/components/modules/MembershipSection";
-import MapSection from "@/src/components/modules/MapSection";
-import ContactSection from "@/src/components/modules/ContactSection";
-import { getServicesByCategory } from "@/src/infrastructure/mdx-repository";
+import { Hero } from '@/src/components/organisms/Hero'
+import { ServicesSection } from '@/src/components/organisms/ServicesSection'
+import { PromosSection } from '@/src/components/organisms/PromosSection'
+import { BarbersSection } from '@/src/components/organisms/BarbersSection'
+import { GallerySection } from '@/src/components/organisms/GallerySection'
+import { ContactSection } from '@/src/components/organisms/ContactSection'
+import { PartnerCarousel } from '@/src/components/organisms/PartnerCarousel'
+import { CTASection } from '@/src/components/organisms/CTASection'
+import { getPartners } from '@/src/infrastructure/mdx-repository'
 
-export default function Home() {
-  const categories = getServicesByCategory();
+export default function HomePage() {
+  const partners = getPartners()
 
   return (
     <main className="flex-1">
       <Hero />
-      {categories.length > 0 && <ServicesSection categories={categories} />}
-      <AboutSection />
-      <MembershipSection />
-      <MapSection />
+      <PartnerCarousel partners={partners} />
+      <ServicesSection />
+      <PromosSection />
+      <BarbersSection />
+      <GallerySection />
       <ContactSection />
+      <CTASection />
     </main>
-  );
+  )
 }
