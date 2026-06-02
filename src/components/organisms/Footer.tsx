@@ -5,16 +5,17 @@ import { BARBARO_INFO } from '@/src/lib/constants'
 import Image from 'next/image'
 import Link from 'next/link'
 import { MapPin, Phone, Mail } from 'lucide-react'
+import { SdlFooter } from './SdlFooter'
 
 export function Footer() {
   const whatsappNumber = BARBARO_INFO.phone.replace(/\D/g, "");
 
   return (
-    <footer className="bg-[var(--color-background)] border-t border-[var(--color-primary)] pt-16 pb-8">
+    <footer className="bg-[var(--color-background)] border-t border-[var(--color-primary)] pt-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-16">
         
         {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 pb-8">
           
           {/* Columna 1: Logo + Desc */}
           <div className="md:col-span-4 flex flex-col gap-6">
@@ -66,22 +67,8 @@ export function Footer() {
           </div>
 
         </div>
-
-        {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-[var(--color-border)]">
-          <p className="font-sans text-[10px] uppercase tracking-widest text-[var(--color-muted-foreground)]">
-            © {new Date().getFullYear()} {BARBARO_INFO.shortName}. Todos los derechos reservados.
-          </p>
-          <div className="flex items-center gap-6">
-            <a href={BARBARO_INFO.social.facebook} target="_blank" rel="noopener noreferrer" className="font-sans text-[10px] uppercase tracking-widest text-[var(--color-muted-foreground)] hover:text-[var(--color-primary)] transition-colors">
-              Facebook
-            </a>
-            <a href={BARBARO_INFO.social.tiktok} target="_blank" rel="noopener noreferrer" className="font-sans text-[10px] uppercase tracking-widest text-[var(--color-muted-foreground)] hover:text-[var(--color-primary)] transition-colors">
-              TikTok
-            </a>
-          </div>
-        </div>
       </div>
+      <SdlFooter tema="dark" />
     </footer>
   )
 }
