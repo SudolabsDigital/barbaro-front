@@ -39,7 +39,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="bg-background min-h-screen pt-20 pb-12 grain-overlay overflow-hidden flex-1">
+    <main className="bg-background min-h-screen pt-20 pb-12 overflow-hidden flex-1">
       
       {/* 1. Header Editorial */}
       <section className="max-w-6xl mx-auto px-4 lg:px-6 mb-10 text-center lg:text-left">

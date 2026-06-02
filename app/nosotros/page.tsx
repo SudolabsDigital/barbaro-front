@@ -6,7 +6,7 @@ import { CTASection } from "@/src/components/organisms/CTASection";
 
 export default function AboutPage() {
   return (
-    <main className="bg-background min-h-screen pt-20 pb-12 overflow-hidden grain-overlay flex-1">
+    <main className="bg-background min-h-screen pt-20 pb-12 overflow-hidden flex-1">
       
       {/* 1. HERO EDITORIAL */}
       <section className="max-w-6xl mx-auto px-4 lg:px-6 mb-16">

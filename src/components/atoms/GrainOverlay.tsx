@@ -8,7 +8,7 @@ interface GrainOverlayProps {
 
 export function GrainOverlay({ children, className }: GrainOverlayProps) {
   return (
-    <div className={`grain-overlay relative ${className ?? ''}`}>
+    <div className={`relative ${className ?? ''}`}>
       {children}
     </div>
   )
